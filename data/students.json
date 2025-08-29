@@ -1,0 +1,62 @@
+[
+  {
+    "student_id": "s981001",
+    "password": "pass1",
+    "first_name": "امیرحسین",
+    "last_name": "جعفری"
+  },
+  {
+    "student_id": "s981002",
+    "password": "pass2",
+    "first_name": "سارا",
+    "last_name": "محمدی"
+  },
+  {
+    "student_id": "s992003",
+    "password": "pass3",
+    "first_name": "نیما",
+    "last_name": "صادقی"
+  },
+  {
+    "student_id": "s991004",
+    "password": "pass4",
+    "first_name": "فاطمه",
+    "last_name": "کریمی"
+  },
+  {
+    "student_id": "s972005",
+    "password": "pass5",
+    "first_name": "رضا",
+    "last_name": "هاشمی"
+  },
+  {
+    "student_id": "s982006",
+    "password": "pass6",
+    "first_name": "مریم",
+    "last_name": "علوی"
+  },
+  {
+    "student_id": "s991007",
+    "password": "pass7",
+    "first_name": "علی",
+    "last_name": "حسینی"
+  },
+  {
+    "student_id": "s971008",
+    "password": "pass8",
+    "first_name": "زهرا",
+    "last_name": "احمدی"
+  },
+  {
+    "student_id": "s981009",
+    "password": "pass9",
+    "first_name": "کیان",
+    "last_name": "مرادی"
+  },
+  {
+    "student_id": "s992010",
+    "password": "pass10",
+    "first_name": "هستی",
+    "last_name": "نوروزی"
+  }
+]

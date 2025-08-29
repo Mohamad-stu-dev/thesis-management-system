@@ -1,0 +1,82 @@
+[
+  {
+    "course_id": "AI401",
+    "title": "پایان‌نامه در یادگیری عمیق",
+    "professor_id": "p101",
+    "capacity": 2,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "AI402",
+    "title": "پایان‌نامه در پردازش زبان طبیعی",
+    "professor_id": "p101",
+    "capacity": 3,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "SE501",
+    "title": "پایان‌نامه در معماری نرم‌افزار",
+    "professor_id": "p102",
+    "capacity": 2,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "SE502",
+    "title": "پایان‌نامه در تست و کیفیت نرم‌افزار",
+    "professor_id": "p102",
+    "capacity": 2,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "NS601",
+    "title": "پایان‌نامه در امنیت شبکه های بی‌سیم",
+    "professor_id": "p103",
+    "capacity": 3,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "DS701",
+    "title": "پایان‌نامه در تحلیل داده‌های حجیم",
+    "professor_id": "p104",
+    "capacity": 3,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "DS702",
+    "title": "پایان‌نامه در بصری‌سازی داده",
+    "professor_id": "p104",
+    "capacity": 2,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "BI801",
+    "title": "پایان‌نامه در تحلیل ژنوم",
+    "professor_id": "p105",
+    "capacity": 1,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "BI802",
+    "title": "پایان‌نامه در مدل‌سازی پروتئین",
+    "professor_id": "p105",
+    "capacity": 1,
+    "year": 1403,
+    "semester": 1
+  },
+  {
+    "course_id": "NS602",
+    "title": "پایان‌نامه در رمزنگاری کاربردی",
+    "professor_id": "p103",
+    "capacity": 0,
+    "year": 1402,
+    "semester": 2
+  }
+]
