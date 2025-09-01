@@ -19,6 +19,7 @@ def load_data(filename):
     with open(file_path, "r", encoding="utf-8") as file:
         try:
             data = json.load(file)
+            return data
         except json.JSONDecodeError:
             return []
 
