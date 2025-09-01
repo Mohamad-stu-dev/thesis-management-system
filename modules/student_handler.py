@@ -1,4 +1,4 @@
-from . import models
+from modules import models
 
 
 def show_student_dashboard(student_object):

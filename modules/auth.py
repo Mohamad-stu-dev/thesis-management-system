@@ -1,4 +1,4 @@
-from . import models
+from modules import models
 
 
 def log_in(user_id, password):

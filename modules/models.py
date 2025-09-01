@@ -1,4 +1,4 @@
-from . import database
+from modules import database
 import datetime
 
 
