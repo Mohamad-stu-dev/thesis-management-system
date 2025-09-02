@@ -29,7 +29,7 @@ def show_professor_dashboard(professor_object):
 
 
 def manage_thesis_requests(professor_object):
-    all_theses = models.Thesis.get_all_theses()
+    all_theses = models.thesis.get_all_theses()
     pending_requests = []
   
     for thesis in all_theses:
@@ -42,7 +42,7 @@ def manage_thesis_requests(professor_object):
 
     print("your pending thesis requests are:")
     for i, thesis in enumerate(pending_requests, start=1):
-        student = models.Student.find_by_id(thesis.student_id)
+        student = models.student.find_by_id(thesis.student_id)
         student_name = (
             f"{student.first_name} {student.last_name}" if student else "unknown"
         )
@@ -88,7 +88,7 @@ def manage_thesis_requests(professor_object):
 
 
 def manage_defense_requests(professor_object):
-    all_theses = models.Thesis.get_all_theses()
+    all_theses = models.thesis.get_all_theses()
     defense_requests = []
     for thesis in all_theses:
         if (
@@ -154,7 +154,7 @@ def search_theses():
         "Enter a keyword to search by title, author, or keyword (or leave blank to see all): "
     ).lower()
 
-    all_theses = models.Thesis.get_all_theses()
+    all_theses = models.thesis.get_all_theses()
     completed_theses = [t for t in all_theses if t.status == "completed"]
 
     if not completed_theses:
@@ -163,7 +163,7 @@ def search_theses():
 
     results = []
     for thesis in completed_theses:
-        student = models.Student.find_by_id(thesis.student_id)
+        student = models.student.find_by_id(thesis.student_id)
         supervisor = models.Professor.find_by_id(thesis.supervisor_id)
 
         search_content = f"{thesis.title} {' '.join(thesis.keywords)}".lower()

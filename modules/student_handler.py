@@ -1,7 +1,7 @@
 from modules import models
 
 
-def show_student_dashboard(student_object):
+def student_dashboard_menu(student_object):
     print(f"/n welcome {student_object.first_name} {student_object.last_name}")
 
     while True:
@@ -32,7 +32,7 @@ def show_student_dashboard(student_object):
         else:
             print("Error: Invalid option. Please enter a number between 1 and 5.")
 
-        def view_request_status(student_object):
+def view_request_status(student_object):
             print("\n--- Status of Your Requests ---")
             student_theses = []
             all_theses = models.thesis.get_all_theses()
@@ -56,62 +56,61 @@ def show_student_dashboard(student_object):
                     if thesis.title:
                         print(f"   Thesis Title: {thesis.title}")
 
-        def handle_thesis_request(student_object):
-            """
-            available thesis courses(capacity)and handles the student's request to take one.
-            """
-            print("\n--- Request a Thesis Course ---")
-            all_courses = models.Course.get_all_courses()
-            available_courses = [
-                course for course in all_courses if course.capacity > 0
-            ]
-            if not available_courses:
-                print("No available courses. Please try again later.")
-                return
+def handle_thesis_request(student_object):
+    print("\n--- Request a Thesis Course ---")
 
-            for i, course in enumerate(available_courses, 1):
-                professor = models.Professor.find_by_id(course.supervisor_id)
+    all_courses = models.Course.get_all_courses()
+    available_courses = [course for course in all_courses if course.capacity > 0]
 
-                print(f"{i}.course title : {course.title}")
-                print(f"course id : {course.course_id}")
-                print(f"supervisor : {professor.first_name} {professor.last_name}")
-                print(f"capacity : {course.capacity}")
+    if not available_courses:
+        print("No available courses with capacity. Please try again later.")
+        return
 
-                choice = int(
-                    input(
-                        "Enter the number of the course you want to request: (0 for cancel request) "
-                    )
-                )
-                try:
-                    if not 0 <= choice <= len(available_courses):
-                        print("Error: invalid input")
-                        return
-                except ValueError:
-                    print("Error: invalid input")
-                    return
-                if choice == 0:
-                    print("Request canceled.")
-                    return
-                selected_course = available_courses[choice - 1]
-                selected_course.capacity -= 1
+    print("Here are the available thesis courses:")
+    for i, course in enumerate(available_courses, 1):
+        professor = models.Professor.find_by_id(course.professor_id)
+        professor_name = f"{professor.first_name} {professor.last_name}" if professor else "N/A"
+        
+        print(f"\n{i}. Course Title: {course.title}")
+        print(f"   Course ID: {course.course_id}")
+        print(f"   Supervisor: {professor_name}")
+        print(f"   Capacity: {course.capacity}")
 
-                new_thesis_req = models.thesis(
-                    student_id=student_object.student_id,
-                    course_id=selected_course.course_id,
-                    supervisor_id=selected_course.professor_id,
-                )
-                new_thesis_request.save()
-                print(
-                    "\nSuccess! Your request has been submitted and is waiting for supervisor approval."
-                )
+    try:
+        choice = int(input("\nEnter the number of the course you want to request (or 0 to cancel): "))
+        if not (0 <= choice <= len(available_courses)):
+            print("Error: Invalid number. Returning to menu.")
+            return
+    except ValueError:
+        print("Error: Please enter a valid number. Returning to menu.")
+        return
 
-        def handle_defense_request(student_object):
+    if choice == 0:
+        print("Operation cancelled.")
+        return
+
+    selected_course = available_courses[choice - 1]
+    selected_course.capacity -= 1
+    selected_course.save()
+
+    new_thesis_request = models.thesis(
+        student_id=student_object.student_id,
+        course_id=selected_course.course_id,
+        supervisor_id=selected_course.professor_id
+    )
+    new_thesis_request.save()
+
+    print(f"\nSuccess: Your request for the course '{selected_course.title}' has been submitted.")
+    print("Please wait for the supervisor's approval.")
+
+
+def handle_defense_request(student_object):
             """
             Allows a student to submit a defense request for an approved thesis.
             """
             print("\n--- Submit a Defense Request ---")
 
-            all_theses = models.get_all_theses()
+            all_theses = models.thesis.get_all_theses()
 
             approved_thesis = None
             for thesis in all_theses:
@@ -165,5 +164,52 @@ def show_student_dashboard(student_object):
             else:
               
                 print(
-                    "\nAn error occurred while submitting your request. Please check the status and try again."
-                )
+                    "\nAn error occurred while submitting your request. Please check the status and try again.")
+
+
+
+def search_theses():
+    print("\n--- Search in Thesis Archive ---")
+
+    query = input("Enter a keyword to search by title, author, or keyword (or leave blank to see all): ").lower()
+
+    all_theses = models.thesis.get_all_theses()
+    completed_theses = [t for t in all_theses if t.status == "completed"]
+
+    if not completed_theses:
+        print("The thesis archive is currently empty.")
+        return
+
+    results = []
+    for thesis in completed_theses:
+        student = models.Student.find_by_id(thesis.student_id)
+        supervisor = models.Professor.find_by_id(thesis.supervisor_id)
+
+        search_content = f"{thesis.title} {' '.join(thesis.keywords)}".lower()
+        if student:
+            search_content += f" {student.first_name} {student.last_name}".lower()
+        if supervisor:
+            search_content += f" {supervisor.first_name} {supervisor.last_name}".lower()
+
+        if query in search_content:
+            results.append((thesis, student, supervisor))
+
+    if not results:
+        print(f"No results found for '{query}'.")
+        return
+
+    print(f"\nFound {len(results)} result(s):")
+    for thesis, student, supervisor in results:
+        student_name = f"{student.first_name} {student.last_name}" if student else "N/A"
+        supervisor_name = f"{supervisor.first_name} {supervisor.last_name}" if supervisor else "N/A"
+
+        print("\n" + "-" * 20)
+        print(f"Title: {thesis.title}")
+        print(f"Author: {student_name}")
+        print(f"Supervisor: {supervisor_name}")
+        print(f"Keywords: {', '.join(thesis.keywords)}")
+        print(f"Grade: {thesis.grade}")
+        print(f"File Path: {thesis.thesis_file_path}")
+    print("-" * 20)
+
+

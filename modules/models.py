@@ -209,9 +209,10 @@ class thesis:
         self.course_id = course_id
         self.supervisor_id = supervisor_id
         self.status = status
-        self.request_date = (
-            request_date if request_date is not None else datetime.datetime.now()
-        )
+        if isinstance(request_date, str):
+            self.request_date = datetime.date.fromisoformat(request_date)
+        else:
+            self.request_date = request_date if request_date else datetime.date.today()
         self.title = title
         self.abstract = abstract
         self.key_word = key_word if key_word is not None else []
@@ -227,7 +228,7 @@ class thesis:
             "course_id": self.course_id,
             "supervisor_id": self.supervisor_id,
             "status": self.status,
-            "request_date": self.request_date,
+            "request_date": self.request_date.isoformat() if self.request_date else None,
             "title": self.title,
             "abstract": self.abstract,
             "key_word": self.key_word,
@@ -290,7 +291,7 @@ class thesis:
         if self.status != "approved":
             print("you can not request defense when status is not approved")
             return False
-        thesis = Thesis(title, abstract, keywords, thesis_file_path, self)
+        thesis = thesis(title, abstract, keywords, thesis_file_path, self)
         self.title = title
         self.abstract = abstract
         self.keywords = keywords

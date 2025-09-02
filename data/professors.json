@@ -1,45 +1,45 @@
 [
   {
-    "professor_id": "p101",
+    "professor_id": "p201",
     "password": "prof1",
-    "first_name": "کاوه",
-    "last_name": "ستوده",
+    "first_name": "Robert",
+    "last_name": "Johnson",
     "expertise": "Artificial Intelligence",
     "supervision_capacity": 5,
     "judgement_capacity": 10
   },
   {
-    "professor_id": "p102",
+    "professor_id": "p202",
     "password": "prof2",
-    "first_name": "شهلا",
-    "last_name": "پرویزی",
+    "first_name": "Patricia",
+    "last_name": "Martin",
     "expertise": "Software Engineering",
     "supervision_capacity": 4,
     "judgement_capacity": 8
   },
   {
-    "professor_id": "p103",
+    "professor_id": "p203",
     "password": "prof3",
-    "first_name": "بهرام",
-    "last_name": "راد",
+    "first_name": "Charles",
+    "last_name": "Thompson",
     "expertise": "Network Security",
     "supervision_capacity": 3,
     "judgement_capacity": 6
   },
   {
-    "professor_id": "p104",
+    "professor_id": "p204",
     "password": "prof4",
-    "first_name": "میترا",
-    "last_name": "زمانی",
+    "first_name": "Jennifer",
+    "last_name": "Garcia",
     "expertise": "Data Science",
     "supervision_capacity": 5,
     "judgement_capacity": 10
   },
   {
-    "professor_id": "p105",
+    "professor_id": "p205",
     "password": "prof5",
-    "first_name": "فرهاد",
-    "last_name": "قائمیان",
+    "first_name": "William",
+    "last_name": "Martinez",
     "expertise": "Bioinformatics",
     "supervision_capacity": 2,
     "judgement_capacity": 5

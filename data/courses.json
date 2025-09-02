@@ -1,82 +1,92 @@
 [
-  {
-    "course_id": "AI401",
-    "title": "پایان‌نامه در یادگیری عمیق",
-    "professor_id": "p101",
-    "capacity": 2,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "AI402",
-    "title": "پایان‌نامه در پردازش زبان طبیعی",
-    "professor_id": "p101",
-    "capacity": 3,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "SE501",
-    "title": "پایان‌نامه در معماری نرم‌افزار",
-    "professor_id": "p102",
-    "capacity": 2,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "SE502",
-    "title": "پایان‌نامه در تست و کیفیت نرم‌افزار",
-    "professor_id": "p102",
-    "capacity": 2,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "NS601",
-    "title": "پایان‌نامه در امنیت شبکه های بی‌سیم",
-    "professor_id": "p103",
-    "capacity": 3,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "DS701",
-    "title": "پایان‌نامه در تحلیل داده‌های حجیم",
-    "professor_id": "p104",
-    "capacity": 3,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "DS702",
-    "title": "پایان‌نامه در بصری‌سازی داده",
-    "professor_id": "p104",
-    "capacity": 2,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "BI801",
-    "title": "پایان‌نامه در تحلیل ژنوم",
-    "professor_id": "p105",
-    "capacity": 1,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "BI802",
-    "title": "پایان‌نامه در مدل‌سازی پروتئین",
-    "professor_id": "p105",
-    "capacity": 1,
-    "year": 1403,
-    "semester": 1
-  },
-  {
-    "course_id": "NS602",
-    "title": "پایان‌نامه در رمزنگاری کاربردی",
-    "professor_id": "p103",
-    "capacity": 0,
-    "year": 1402,
-    "semester": 2
-  }
+    {
+        "course_id": "AI-01",
+        "title": "Thesis on Deep Learning",
+        "professor_id": "p201",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 2,
+        "unit": 3
+    },
+    {
+        "course_id": "AI-02",
+        "title": "Thesis on Natural Language Processing",
+        "professor_id": "p201",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 3,
+        "unit": 3
+    },
+    {
+        "course_id": "SE-01",
+        "title": "Thesis on Software Architecture",
+        "professor_id": "p202",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 2,
+        "unit": 4
+    },
+    {
+        "course_id": "SE-02",
+        "title": "Thesis on Software Testing & QA",
+        "professor_id": "p202",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 2,
+        "unit": 3
+    },
+    {
+        "course_id": "NS-01",
+        "title": "Thesis on Wireless Network Security",
+        "professor_id": "p203",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 3,
+        "unit": 3
+    },
+    {
+        "course_id": "DS-01",
+        "title": "Thesis on Big Data Analytics",
+        "professor_id": "p204",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 3,
+        "unit": 4
+    },
+    {
+        "course_id": "DS-02",
+        "title": "Thesis on Data Visualization",
+        "professor_id": "p204",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 0,
+        "unit": 3
+    },
+    {
+        "course_id": "BI-01",
+        "title": "Thesis on Genome Analysis",
+        "professor_id": "p205",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 1,
+        "unit": 4
+    },
+    {
+        "course_id": "BI-02",
+        "title": "Thesis on Protein Modeling",
+        "professor_id": "p205",
+        "year": 2024,
+        "semester": 1,
+        "capacity": 0,
+        "unit": 4
+    },
+    {
+        "course_id": "NS-02",
+        "title": "Thesis on Applied Cryptography",
+        "professor_id": "p203",
+        "year": 2023,
+        "semester": 2,
+        "capacity": 0,
+        "unit": 3
+    }
 ]

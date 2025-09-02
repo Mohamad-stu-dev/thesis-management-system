@@ -22,7 +22,7 @@ def main():
 
             if logged_in_user:
                 if user_role == "student":
-                    student_handler.show_student_dashboard(logged_in_user)
+                    student_handler.student_dashboard_menu(logged_in_user)
                 elif user_role == "professor":
                     professor_handler.show_professor_dashboard(logged_in_user)
                 

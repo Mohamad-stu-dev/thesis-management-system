@@ -1,0 +1,17 @@
+[
+    {
+        "thesis_id": 1756843204,
+        "student_id": "s1001",
+        "course_id": "BI-02",
+        "supervisor_id": "p205",
+        "status": "approved",
+        "request_date": "2025-09-02",
+        "title": null,
+        "abstract": null,
+        "key_word": [],
+        "thesis_path": null,
+        "defense_date": null,
+        "judges": [],
+        "grade": null
+    }
+]
